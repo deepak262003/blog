@@ -1,0 +1,64 @@
+*{
+    margin:0;
+    padding:0;
+}
+.parent_{
+    width:100%;
+    display:flex;
+    text-align:center;
+    align-items: center;
+    vertical-align: center;
+    height:100vh;
+}
+.container{
+    width: 250px;
+    height: auto;
+    padding: 20px 30px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 black;
+    margin:auto;
+}
+
+ul.list{
+ list-style-type: none;
+ text-align:center;
+}
+
+ul.list li{
+ width: 250px;
+ margin-bottom:10px;
+}
+
+ul.list li input{
+    width : 250px;
+    text-align: center;
+    padding:8px 0px;
+    border:none;
+    background-color: aliceblue;
+    border-radius: 10px;
+}
+
+ul.list li:nth-child(5){
+    color:green;
+}
+
+ul.list li input[type="submit"]{
+    background-color: green;
+    color:white;
+    font-weight: bold;
+}
+
+ul.list li h2{
+    color:rgb(75, 75, 221);
+}
+
+ul.list li p{
+    color:rgb(56, 18, 226);
+    font-size: 12px;
+    font-weight: bold;
+}
+h2,ul.list li i{
+    color:red;
+}
+
