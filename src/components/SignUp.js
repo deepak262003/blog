@@ -7,8 +7,8 @@ const SignUp = () => {
   const emailRef = useRef();
   const passwordRef = useRef();
   const confirmPasswordRef = useRef();
-  const { SignUp } = useAuth();
-  const [status, setStatus] = useState("user registered successfully");
+  const { SignUp,verifyEmail} = useAuth();
+  var status ="";
   const [loading, setLoading] = useState(false);
 
   const passwordChecker = (e) => {
@@ -39,19 +39,19 @@ const SignUp = () => {
     } catch (error) {
       switch (error.code) {
         case ("auth/email-already-in-use"): {
-          setStatus("Email already exists");
+          status = "Email already exists";
           alert(status);
           break;
         }
         default: {
-          setStatus("Error creating account");
+          status = "Error creating account";
           alert(status);
           break;
         }
       }
-      setLoading(false);
+      setLoading(true);
     }
-    console.log(status);
+    console.log(status)
   }
 
   return (

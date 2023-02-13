@@ -4,8 +4,12 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   onAuthStateChanged,
+  sendPasswordResetEmail,
+  sendEmailVerification
 } from "firebase/auth";
 import { signOut } from "firebase/auth";
+import { deleteDoc,doc } from "firebase/firestore";
+import { db } from "../Firebase/Firebase";
 
 const AuthContext = React.createContext();
 
@@ -37,6 +41,28 @@ const AuthProvider = ({ children }) => {
       window.location.pathname = "/";    
     });
   };
+  
+  const deleteBlog = async(id) =>{
+  const docRef = doc(db, 'posts', id);
+    await deleteDoc(docRef);
+  }
+
+  const passwordReset = (email) => {
+    try {
+      var isSent = sendPasswordResetEmail(auth, email);
+    }
+    catch (error) {
+      alert(error.code);
+    }
+    if (isSent) {
+      alert("password reset email sent...")
+    }
+  }
+
+  const verifyEmail = () => {
+    let isEmailVerified = sendEmailVerification(auth.currentUser);
+    return isEmailVerified;
+  }
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
@@ -50,7 +76,10 @@ const AuthProvider = ({ children }) => {
     SignUp,
     Login,
     SignOut,
-    isAuth
+    isAuth,
+    deleteBlog,
+    passwordReset,
+    verifyEmail
   };
 
   return (

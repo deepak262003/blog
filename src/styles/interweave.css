@@ -1,0 +1,27 @@
+.markup {
+  list-style-type: disc;
+}
+.markup_parent{
+    width:80%;
+    height:20rem;
+    margin:auto;
+    padding:30px;
+}
+.markup_title{
+   margin:auto;
+   height: auto;
+   width:fit-content;
+   margin:auto;
+   padding:20px;
+}
+
+.markup_footer{
+  width:fit-content;
+  margin-top: 20px;
+  margin-left: 80%;
+}
+.markup_footer p{
+  font-family: cursive;
+  text-align: center;
+  font-size: small;
+}

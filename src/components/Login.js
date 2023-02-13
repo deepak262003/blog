@@ -8,7 +8,7 @@ const Login = () => {
   const [loading, setLoading] = useState(false);
   const emailRef = useRef();
   const passwordRef = useRef();
-  const { Login } = useAuth();
+  const { Login,passwordReset } = useAuth();
   const navigate = useNavigate();
 
   async function submitListener(e) {
@@ -19,9 +19,15 @@ const Login = () => {
       setLoading(true);
     } catch (error) {
       alert("oops.. unable to login.. check in credentials");
+      return false;
     }
     setLoading(false);
     navigate('/dashboard');
+  }
+
+  const passwordHandler = async () => {
+    
+    await passwordReset(emailRef.current.value);
   }
 
   return (
@@ -56,7 +62,7 @@ const Login = () => {
             Not registered ? <Link to="/signup"> Sign up </Link>
           </li>
           <li>
-            <i>Forgot password</i>
+            <i onClick={passwordHandler}>Forgot password</i>
           </li>
         </ul>
       </div>

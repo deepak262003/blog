@@ -26,6 +26,7 @@ input[type=text]{
     width:300px;
     text-align: center;
     margin :auto;
-    border:3px solid rgb(53, 53, 147);
+    border:none;
+    outline :none;
     border-radius: 10px;
 }

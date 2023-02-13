@@ -14,6 +14,7 @@ const BlogEditor = () => {
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
   const [content, setContent] = useState("");
+  const[text, setText] = useState("");
   const collectionRef = collection(db, "posts");
   
   const titleRef = useRef();
@@ -31,15 +32,18 @@ const BlogEditor = () => {
           {
             title: title,
             blog: content,
+            blog_text: text,
             author: {
               name: author,
-              id: auth.currentUser.uid
+              id: auth.currentUser.uid,
+              date_publish: new Date().toLocaleDateString()
             }
           }
         )
       }
        catch(error) {
         alert(error.code);
+        return false;
       }
     }
     alert("blog published successfully...");
@@ -50,12 +54,13 @@ const BlogEditor = () => {
     setTitle(titleRef.current.value);
     setAuthor(authorRef.current.value);
     setContent(quill.root.innerHTML);
+    setText(quill.getText());
     alert("changes saved successfully");
   }
 
   return (
     <div >
-      <NavigationBar />
+      <NavigationBar back={false } />
       <br />
       <br />
       <div className="title">

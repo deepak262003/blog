@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap");
+
+.blog_container{
+    width:95%;
+    height:auto;
+    padding:10px;
+    margin:auto;
+    margin-top: 8px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 black;
+
+}
+.parent{
+    padding:8px;
+    height:min-content;
+}
+#blog_title{
+    color:rgb(66, 35, 35);
+    font-family:Raleway;
+}
+#blog_content{
+    font-size: medium;
+    color:rgb(15, 15, 49);
+    text-align: justify;
+    margin: 30px;
+}
+#blog_author{
+    font-size:small;
+    font-family: Raleway;
+    position:relative;
+}
+#blog_author_container{
+    display:block;
+    width:50%;
+    margin-left: 50%;
+    text-align: end;
+    margin-top:4=20%
+}
+#noPosts{
+    width:fit-content;
+    text-align: center;
+    margin:auto;
+    margin-top: 25%;
+    font-family: Raleway;
+}
+#noPosts button{
+    padding:3px 25px;
+    background-color:rgb(75, 75, 216) ;
+    color:white;
+    border-radius: 5px;
+    border:none;
+}
+#del{
+    padding:3px 25px;
+    background-color:rgb(155, 40, 40) ;
+    color:white;
+    border-radius: 5px;
+    border:none;
+    margin-left: 85%;
+}
